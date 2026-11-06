@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>EDT Whitespace Trimmer — выборочная очистка кода</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: #243042;
+      background: #f4f6f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    main {
+      padding: 36px;
+      background: #fff;
+      border: 1px solid #e2e7ed;
+      border-radius: 16px;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.25;
+      color: #152238;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: clamp(26px, 5vw, 38px);
+    }
+
+    h2 {
+      margin-top: 32px;
+      font-size: 23px;
+    }
+
+    a {
+      color: #1769aa;
+      text-underline-offset: 3px;
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #edf1f5;
+      overflow-wrap: anywhere;
+    }
+
+    .repository-url {
+      display: block;
+      padding: 16px;
+      border: 1px solid #dce4ed;
+      border-radius: 8px;
+    }
+
+    .note {
+      padding: 14px 18px;
+      border-left: 4px solid #e6a23c;
+      background: #fff8eb;
+    }
+
+    .publication {
+      margin-top: 32px;
+      padding: 24px;
+      border: 1px solid #e2e7ed;
+      border-radius: 12px;
+      background: #fafbfc;
+    }
+
+    .publication h2 {
+      margin-top: 16px;
+    }
+
+    .infostart-logo {
+      display: block;
+      width: 220px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e7ed;
+      font-size: 14px;
+      color: #5c6878;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px 12px;
+      }
+
+      main {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>EDT Whitespace Trimmer</h1>
+
+    <p>
+      Плагин для 1C:EDT, который удаляет пробелы и табуляции
+      в конце строк при сохранении выбранных файлов.
+    </p>
+
+    <p>
+      Область обработки задаётся подстрокой в полном пути файла.
+      Например, можно указать префикс собственных объектов
+      <code>demo_</code> и не применять очистку к остальным модулям.
+    </p>
+
+    <h2>Установка</h2>
+
+    <ol>
+      <li>
+        Откройте в EDT
+        «Справка → Установить новое ПО…».
+      </li>
+      <li>
+        Нажмите «Добавить…» и укажите адрес сайта обновлений:
+      </li>
+    </ol>
+
+    <code class="repository-url">https://krasturist.github.io/edt-whitespacer/</code>
+
+    <ol start="3">
+      <li>
+        Выберите
+        «EDT Tools → EDT Whitespace Trimmer».
+      </li>
+      <li>
+        Завершите установку и перезапустите EDT.
+      </li>
+    </ol>
+
+    <p class="note">
+      Если список компонентов не загрузился, откройте
+      «Окно → Параметры → Установка/обновление →
+      Доступные сайты ПО», выберите сайт и нажмите
+      «Перезагрузить / Reload».
+    </p>
+
+    <h2>Настройка</h2>
+
+    <p>
+      Откройте
+      «Окно → Параметры → EDT Whitespace Trimmer».
+      В поле «Подстрока в пути файла» укажите признак,
+      по которому нужно выбирать файлы, например
+      <code>demo_</code>.
+    </p>
+
+    <ul>
+      <li>
+        Проверяется полный путь файла, а не только его имя.
+      </li>
+      <li>
+        Регистр учитывается.
+      </li>
+      <li>
+        Пустое поле или строка только из пробелов
+        отключает очистку.
+      </li>
+      <li>
+        Изменение фильтра применяется при следующем сохранении.
+      </li>
+    </ul>
+
+    <section class="publication" aria-labelledby="publication-title">
+      <!-- Замените https://infostart.ru/1c/articles/2839224/
+           на адрес публикации в обоих местах этого блока. -->
+
+      <a href="https://infostart.ru/1c/articles/2839224/">
+        <img
+          class="infostart-logo"
+          src="https://infostart.ru/bitrix/templates/sandbox_empty/assets/tpl/abo/img/logo.svg"
+          alt="Инфостарт"
+          width="220"
+        >
+      </a>
+
+      <h2 id="publication-title">Публикация на Инфостарт</h2>
+
+      <p>
+        Описание плагина, примеры использования
+        и обсуждение доступны в статье:
+      </p>
+
+      <p>
+        <a href="https://infostart.ru/1c/articles/2839224/">
+          Удаление пробелов при сохранении в 1C:EDT —
+          только для выбранных файлов
+        </a>
+      </p>
+    </section>
+
+    <footer>
+      <a href="https://github.com/krasturist/edt-whitespacer">
+        Исходный код и описание проекта на GitHub
+      </a>
+    </footer>
+  </main>
+</body>
+</html>
