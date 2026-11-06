@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/ru.nechaev.edt.whitespacetrimmer.feature_1.0.0.202611051628.jar" id="ru.nechaev.edt.whitespacetrimmer.feature" version="1.0.0.202611051628">
+      <category name="edt-tools"/>
+   </feature>
+   <category-def name="edt-tools" label="EDT Tools"/>
+</site>
